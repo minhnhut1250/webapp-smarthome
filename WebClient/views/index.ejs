@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<% include head%>
+
+    <body>
+        <%include modal%>
+
+            <nav class="navbar navbar-expand fixed-top d-flex flex-row justify-content-start">
+
+                <% include header%>
+            </nav>
+
+            <div class="wrapper-offcanvas">
+                <div class="row-offcanvas row-offcanvas-left">
+                    <% include sidebar%>
+                        <div id="main">
+                            <%include home%>
+                                <%include lights%>
+                                    <%include doors%>
+                                        <%include cameras%>
+                                            <%include profile%>
+                        </div>
+
+                </div>
+            </div>
+
+    </body>
+
+</html>

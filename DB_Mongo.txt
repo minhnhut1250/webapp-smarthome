@@ -1,0 +1,35 @@
+use smarthome
+db.users.remove({})
+db.devices.remove({})
+db.users.insert([
+	{username:"admin",password: "admin", fullname:"Administrators",phone:"",email:"",location:"",avatar:""}
+])
+db.devices.insert([
+	{deviceName: "Doors", deviceType:"DOOR", description: "Doors", position: "LIVINGROOM", modules:[
+				{type: "SERVO", pin:11, state: false,	connect: true},
+				{type: "SENSOR", pin:0, state: false, connect: true},
+				{type: "RADAR", pin:5, state: false, connect: true}
+			]
+	},
+	{deviceName: "Door 1", deviceType:"DOOR", description: "Door", position: "BEDROOM", modules:[]
+	},
+	{deviceName: "Door", deviceType:"DOOR", description: "Door", position: "BATHROOM", modules:[]
+	},
+	{deviceName: "Windows 1", deviceType:"DOOR", description: "Windows", position: "DININGROOM", modules:[
+				{type: "SENSOR", pin:3, state: false, connect: true}
+			]
+	},
+	{deviceName: "Windows 2", deviceType:"DOOR", description: "Windows", position: "LIVINGROOM", modules:[
+				{type: "SENSOR", pin:4, state: false,	connect: true}
+			]
+	},
+	{deviceName: "Light 1", deviceType:"LIGHT", description: "LIGHTS", position: "LIVINGROOM",  modules:[{type: "LIGHT", pin:5, state: false,	connect: true}]},
+	{deviceName: "Light 2", deviceType:"LIGHT", description: "LIGHTS", position: "LIVINGROOM", modules:[{type: "LIGHT", pin:4, state: false, connect: true}]},
+	{deviceName: "Light 3", deviceType:"LIGHT", description: "LAMP", position: "BEDROOM", modules:[{type: "LIGHT", pin:9, state: false,	connect: true}]},
+	{deviceName: "Light 4", deviceType:"LIGHT", description: "LIGHTS", position: "BEDROOM", modules:[{type: "LIGHT", pin:10, state: false, connect: true}]},
+	{deviceName: "Light 5", deviceType:"LIGHT", description: "LIGHTS", position: "DININGROOM", modules:[{type: "LIGHT", pin:6, state: false, connect: true}]},
+	{deviceName: "Light 6", deviceType:"LIGHT", description: "LIGHTS", position: "DININGROOM", modules:[{type: "LIGHT", pin:7, state: false, connect: true}]},
+	{deviceName: "Light 7", deviceType:"LIGHT", description: "LIGHTS", position: "BATHROOM", modules:[{type: "LIGHT", pin:8, state: false, connect: true}]},
+ 	{deviceName: "Camera 1", deviceType:"CAMERA", description: "", position: "FRONTDOORS", modules:[{type:"CAMERA",pin:100,state:false, connect: true}]},
+	{deviceName: "Camera 2", deviceType:"CAMERA", description: "", position: "BACKHOUSE", modules:[{type:"CAMERA",pin:100,state:false, connect: true}]}
+])

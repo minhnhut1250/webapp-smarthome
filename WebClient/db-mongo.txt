@@ -1,0 +1,43 @@
+use smarthome
+db.devices.remove({})
+db.devices.insert([
+	{deviceName: "Light 1", deviceType: "LIGHT", description: "LIGHTS", position: "LIVINGROOM",  module:[{type: "LED", pin:5, state: false}], connect: true},
+	{deviceName: "Light 2", deviceType:"LIGHT", description: "LIGHTS", position: "LIVINGROOM", module:[{type: "LED", pin:6, state: false}], connect: true},
+	{deviceName: "Light 3", deviceType:"LIGHT", description: "LIGHTS", position: "BEDROOM", module:[{type: "LED", pin:7, state: false}], connect: true},
+	{deviceName: "Light 4", deviceType:"LIGHT", description: "LIGHTS", position: "BEDROOM", module:[{type: "LED", pin:8, state: false}], connect: true},
+	{deviceName: "Light 5", deviceType:"LIGHT", description: "LIGHTS", position: "DININGROOM", module:[{type: "LED", pin:9, state: false}], connect: true},
+	{deviceName: "Light 6", deviceType:"LIGHT", description: "LIGHTS", position: "DININGROOM", module:[{type: "LED", pin:10, state: false}], connect: true},
+	{deviceName: "Light 7", deviceType:"LIGHT", description: "LIGHTS", position: "BATHROOM", module:[{type: "LED", pin:11, state: false}], connect: true},
+	{deviceName: "Doors", deviceType:"DOOR", description: "Doors", position: "LIVINGROOM", module:[
+			{type: "SERVO", pin:11, state: false},
+			{type: "SENSOR", pin:0, state: false}
+			],
+			connect: true
+	},
+	{deviceName: "Door 1", deviceType:"DOOR", description: "Door", position: "BEDROOM", module:[
+			{type: "SERVO", pin:13, state: false},
+			{type: "SENSOR", pin:1, state: false}
+			],
+			connect: true
+	},
+	{deviceName: "Door 2", deviceType:"DOOR", description: "Door", position: "BEDROOM", module:[
+			{type: "SERVO", pin:15, state: false},
+			{type: "SENSOR", pin:2, state: false}
+			],
+			connect: true
+	},
+	{deviceName: "Windows 1", deviceType:"WINDOWS", description: "", position: "DININGROOM", module:[
+				{type: "SERVO", pin:17, state: false},
+				{type: "SENSOR", pin:3, state: false}
+			],
+			connect: true
+	},
+	{deviceName: "Windows 2", deviceType:"WINDOWS", description: "", position: "DININGROOM", module:[
+			{type: "SERVO", pin:19, state: false},
+			{type: "SENSOR", pin:4, state: false}
+		],
+		connect: true
+	},
+	{deviceName: "Camera 1", deviceType:"CAMERA", description: "", position: "FRONT DOORS", module:[], connect: true},
+	{deviceName: "Camera 2", deviceType:"CAMERA", description: "", position: "BACK HOUSE", module:[], connect: true}
+])

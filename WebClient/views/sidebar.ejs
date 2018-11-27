@@ -1,0 +1,70 @@
+<div id="sidebar" class="sidebar-offcanvas">
+    <ul class="nav flex-column nav-sidebar">
+        <li class="nav-item active">
+            <a class="nav-link" href="#" id="home-side">
+                <img class="icon-sprite" src="/img/home.png">Home
+            </a>
+            <script type="text/javascript">
+                $("#home-side").click(function() {
+                    $("#home").show(500);
+                    $("#lights-control").hide(250);
+                    $("#doors-control").hide(250);
+                    $("#cameras-control").hide(250);
+                    $("#profile").hide(250);
+                });
+
+            </script>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="lights-side">
+                <img class="icon-sprite" src="/img/light.png"> Lights
+            </a>
+            <script type="text/javascript">
+                $("#lights-side").click(function() {
+                    $("#lights-control").show(500);
+                    $("#home").hide(250);
+                    $("#doors-control").hide(250);
+                    $("#cameras-control").hide(250);
+                    $("#profile").hide(250);
+                });
+
+            </script>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="doors-side">
+				<img class="icon-sprite" src="/img/door.png"> Doors
+            </a>
+            <script type="text/javascript">
+                $("#doors-side").click(function() {
+                    $("#lights-control").hide(250);
+                    $("#home").hide(250);
+                    $("#doors-control").show(250);
+                    $("#cameras-control").hide(500);
+                    $("#profile").hide(250);
+                });
+
+            </script>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="cameras-side">
+				<img class="icon-sprite" src="/img/camera.png"> Cameras
+            </a>
+            <script type="text/javascript">
+                $("#cameras-side").click(function() {
+                    $("#lights-control").hide(250);
+                    $("#home").hide(250);
+                    $("#doors-control").hide(250);
+                    $("#cameras-control").show(500);
+                    $("#profile").hide(250);
+                });
+
+            </script>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#" id="setting-side">
+				<img class="icon-sprite" src="/img/setting.png"> Settings
+            </a>
+        </li>
+    </ul>
+</div>

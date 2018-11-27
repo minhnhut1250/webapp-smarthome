@@ -1,0 +1,116 @@
+<div class="container-fluid" id="profile">
+    <script>
+        $("#profile").hide();
+
+    </script>
+    <div class="row">
+        <div class="col-12 col-sm-10 offset-sm-1">
+            <!-- Profile tabs START -->
+            <ul class="nav nav-tabs nav-fill" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#person" role="tab">PERSON</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#account" role="tab">ACCOUNT</a>
+                </li>
+            </ul>
+            <div class="info-holder info-ct">
+                <div data-toggle="popover-all" data-content="Customized tabbed interface" data-original-title="Tabs" data-placement="top" data-offset="0,48"></div>
+            </div>
+            <!-- Profile tab panes -->
+            <div class="tab-content px-4 px-sm-0 py-sm-4 mt-4">
+                <!-- Personal pane START -->
+                <div class="tab-pane fade active in" id="person" role="tabpanel">
+                    <form>
+                        <div class="form-group row">
+                            <label for="first-name" class="col-12 col-sm-3 col-form-label">Full Name</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="text" id="fullname" value="<%=data.fullname%>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="last-name" class="col-12 col-sm-3 col-form-label">Email</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="text" id="email" value="<%=data.email%>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="user-email" class="col-12 col-sm-3 col-form-label">Phone</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="email" id="phone" value="<%=data.phone%>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="user-tel" class="col-12 col-sm-3 col-form-label">Location</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="tel" id="location" value="<%=data.location%>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-xs-0 offset-sm-3 col-12 col-sm-9 mt-3">
+                                <button data-action="open" type="button" id="closeperson" class="btn btn-primary">Close</button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- Personal pane END -->
+                <!-- Address pane START -->
+                <div class="tab-pane fade" id="account" role="tabpanel">
+                    <form>
+                        <div class="form-group row">
+                            <label for="street" class="col-12 col-sm-3 col-form-label">Username</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="text" value="<%=data.username%>" id="username" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-12 col-sm-3 col-form-label">Password</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="password" id="pass" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-12 col-sm-3 col-form-label">New Password</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="password" id="newpass" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-12 col-sm-3 col-form-label">Confirm Password</label>
+                            <div class="col-12 col-sm-9">
+                                <input class="form-control custom-focus" type="password" id="confirmpass" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-xs-0 offset-sm-3 col-12 col-sm-9 mt-3">
+                                <button id="savepass" name="savepass" data-action="open" type="button" class="btn btn-primary">Save</button>
+                                <button id="close" data-action="open" type="button" class="btn btn-primary">Close</button>
+                            </div>
+
+                            <script>
+                                $("#close").click(function() {
+                                    $("#profile").hide(250);
+                                    $("#home").show(500);
+
+                                })
+                                $("#closeperson").click(function() {
+                                    $("#profile").hide(250);
+                                    $("#home").show(500);
+                                })
+
+                            </script>
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+                <!-- Address pane END -->
+
+            </div>
+            <!-- Profile tabs END -->
+        </div>
+    </div>
+</div>

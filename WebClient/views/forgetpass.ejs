@@ -1,0 +1,51 @@
+<div class="col-12" style="padding-top:10%;" id="forgetpass">
+    <script>
+        $("#forgetpass").hide();
+
+    </script>
+    <!-- Login form START -->
+    <div class="card px-4 pt-2">
+        <form action="/authenticate" method="post" class="p-2">
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Email</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="email" placeholder="Email@gmail.com" name=email required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">New Password</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="password" placeholder="***********" name=pass required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Confirm Password</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="password" placeholder="***********" name=confirm-pass required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 mt-3 mb-2 text-center">
+                    <button type="submit" class="btn btn-primary btn-block" id="log">Signup</button>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12 mt-3 mb-2 " style="text-align:center; color:black">
+                    <a href="#" class="text-success" id="cancel2">Cancel</a>
+                </div>
+                <script>
+                    $("#cancel2").click(function() {
+                        $("#signup").hide(250);
+                        $("#login").show(500);
+                        $("#forgetpass").hide(250);
+                    });
+
+                </script>
+
+            </div>
+        </form>
+    </div>
+    <!-- Login form END -->
+
+</div>

@@ -1,0 +1,49 @@
+<div class="col-12" style="padding-top:30%;" id="login">
+    <!-- Login form START -->
+    <div class="card px-4 pt-2">
+        <form action="/user/authenticate" method="post" class="p-2">
+            <div class="form-group row">
+                <label for="user-name" class="col-12 col-form-label">Username</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="text" placeholder="Username" name="username" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Password</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="password" placeholder="***********" name=password required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 mt-3 mb-2 text-center">
+                    <button type="submit" id="btnLogin" class="btn btn-primary btn-block">Login</button>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12 mt-3 mb-2 " style="text-align:center; color:black">
+                    <a class="text-success" href="#" id="create">Create account</a> or <a href="#" class="text-success" id="forget">forget password</a>
+                </div>
+                <script>
+                    $("#create").click(function() {
+                        $("#login").hide(250);
+                        $("#signup").show(500);
+                        $("#forgetpass").hide(250);
+                    });
+
+                </script>
+                <script>
+                    $("#forget").click(function() {
+                        $("#login").hide(250);
+                        $("#forgetpass").show(500);
+                        $("#signup").hide(250);
+
+                    });
+
+                </script>
+            </div>
+        </form>
+    </div>
+    <!-- Login form END -->
+
+</div>

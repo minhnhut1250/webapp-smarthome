@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand fixed-top d-flex flex-row justify-content-start">
+    <div class="d-none d-lg-block">
+        <form>
+            <div id="menu-minifier">
+                <label>
+							
+							<input id="minifier" type="checkbox"> 
+							<img src="/img/menu.png">
+						</label>
+                <div class="info-holder info-rb">
+                    <div data-toggle="popover-all" data-content="Checkbox element using localStorage to remember the last status." data-original-title="Side menu narrowing" data-placement="right"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <a class="navbar-brand px-lg-3 px-1 mr-0" href="#" id="home-logo">SMART family</a>
+    <script type="text/javascript">
+        $("#home-logo").click(function() {
+            $("#home").show(500);
+            $("#lights-control").hide(250);
+            $("#doors-control").hide(250);
+            $("#cameras-control").hide(250);
+            $("#profile").hide(250);
+        });
+
+    </script>
+    <div class="ml-auto">
+        <div class="navbar-nav flex-row navbar-icons">
+            <div class="nav-item">
+                <button id="myBtn" class="btn btn-link nav-link" title="Alerts" type="button" data-alerts="3" data-toggle="modal" data-target="#alertsModal" class="modal-show">
+							<img src="/img/notification.png"/><span class="count" id="numberOfNotify"></span>
+                </button>
+            </div>
+            <div id="user-menu" class="nav-item dropdown">
+                <button class="btn btn-link nav-link dropdown-toggle" title="User" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img src="/img/account.png"/>
+						</button>
+
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#" id="profile-header">Profile</a>
+                    <script type="text/javascript">
+                        $("#profile-header").click(function() {
+                            $("#lights-control").hide(250);
+                            $("#home").hide(250);
+                            $("#doors-control").hide(250);
+                            $("#cameras-control").hide(250);
+                            $("#profile").show(500);
+                        });
+
+                    </script>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" id="logout" href="#">Logout</a>
+                    <script>
+                        $("#logout").click(function() {
+                            $.ajax({
+                                url: "/",
+                                type: 'post',
+                                dataType: 'json',
+                                async: true,
+                                data: {}
+                            });
+                            window.location.href = "/";
+                        });
+
+                    </script>
+                </div>
+
+            </div>
+            <div class="nav-item d-lg-none">
+                <button id="sidebar-toggler" type="button" class="btn btn-link nav-link" data-toggle="offcanvas">
+						  <img class="icons-sprite" src="/img/menu.png"/>
+						</button>
+            </div>
+
+
+        </div>
+    </div>
+</nav>

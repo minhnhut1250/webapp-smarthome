@@ -1,0 +1,62 @@
+<div class="container-fluid" id="cameras-control">
+    <script>
+        $("#cameras-control").hide();
+    </script>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card p-2 mb-4">
+                <h4 style="text-align: center; color:#000000 ">Cameras Control</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6" align="center">
+            Camera 1 START
+            <div class="card active" data-unit="switch-camera-1">
+                <div class="card-body d-flex">
+                    <h5>Frontdoors</h5>
+                    <label class="switch">
+                        <input type="checkbox" id="act1"/>
+                        <span style="float: left;" class="slider round"></span>
+                    </label>
+                </div>
+                <div align="center" id="vid1" style="display:none">
+                    <video src="http://192.168.43.86:8080" type="video/mp4" autoplay width="400" height="240" id="cam1" onclick="snap()"></video>
+                    <canvas id="canvas"></canvas>
+
+                </div>
+                <script language="javascript">
+                    document.getElementById('act1').onclick = function() {
+                        if (this.checked) {
+                            document.getElementById("vid1").style.display = 'block';
+                        } else {
+                            document.getElementById("vid1").style.display = 'none';
+                        }
+                    };
+                </script>
+
+
+                <script>
+                    var video = document.querySelector('video');
+                    var canvas = document.querySelector('canvas');
+                    var context = canvas.getContext('2d');
+                    video.addEventListener('loadedmetadata', function() {
+
+                        canvas.width = video.Width;
+                        canvas.height = video.Height;
+                    }, false);
+
+
+
+                    function snap() {
+                        context.fillRect(0, 0, canvas.width, canvas.height);
+                        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                    }
+                </script>
+
+            </div>
+        </div>
+
+    </div>
+</div>

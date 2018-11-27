@@ -1,0 +1,98 @@
+<div class="container-fluid" id="home">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card p-2 mb-4" style="margin:0 !important;">
+                <h4 style="text-align: center; padding:10px 0; margin:0; color:#365899 ">CONTROL-DEVICE</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row" data-unit-group="switch-lights-in">
+        <div class="col-sm-12 col-md-6">
+            <div class="card active" data-unit="switch-light-1">
+                <div class="card-body d-flex flex-row justify-content-start">
+
+                    <h5>Control Lights</h5>
+                    <div class="ml-auto timer-controls" data-controls="garage-doors-1">
+                        <button data-action="open" type="button" class="btn btn-secondary doors-control" id="lights">Go to</button>
+                    </div>
+                    <script type="text/javascript">
+                        $("#lights").click(function() {
+                            $("#lights-control").show(500);
+                            $("#home").hide(250);
+                            $("#doors-control").hide(250);
+                            $("#cameras-control").hide(250);
+                            $("#profile").hide(250);
+                        });
+
+                    </script>
+
+                </div>
+                <hr class="my-0">
+                <div class="list-light">
+
+                </div>
+            </div>
+
+        </div>
+        <!--
+<div class="col-sm-12 col-md-6 col-xl-4">
+    <div class="card active" data-unit="switch-light-1">
+        <div class="card-body d-flex flex-row justify-content-start">
+
+            <h5>Control Cameras</h5>
+            <div class="ml-auto timer-controls" data-controls="garage-doors-1">
+                <button data-action="open" type="button" class="btn btn-secondary doors-control" id="cameras">Go to</button>
+            </div>
+            <script type="text/javascript">
+                $("#cameras").click(function() {
+                    $("#lights-control").hide(250);
+                    $("#home").hide(250);
+                    $("#doors-control").hide(250);
+                    $("#cameras-control").show(500);
+                    $("#profile").hide(250);
+                });
+            </script>
+
+        </div>
+        <hr class="my-0">
+        <div class="list-camera">
+
+
+        </div>
+
+    </div>
+
+</div>
+-->
+        <div class="col-sm-12 col-md-6">
+            <div class="card active" data-unit="switch-light-1">
+                <div class="card-body d-flex flex-row justify-content-start">
+
+                    <h5>Control Doors</h5>
+                    <div class="ml-auto timer-controls" data-controls="garage-doors-1">
+                        <button data-action="open" type="button" class="btn btn-secondary doors-control" id="doors">Go to</button>
+                    </div>
+                    <script type="text/javascript">
+                        $("#doors").click(function() {
+                            $("#doors-control").show(500);
+                            $("#home").hide(250);
+                            $("#lights-control").hide(250);
+                            $("#cameras-control").hide(250);
+                            $("#profile").hide(250);
+                        });
+
+                    </script>
+
+                </div>
+                <hr class="my-0">
+                <div class="list-door">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

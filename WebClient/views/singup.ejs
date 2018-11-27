@@ -1,0 +1,107 @@
+<div class="col-12" style="margin-top:10%;" id="signup">
+    <script>
+        $("#signup").hide();
+
+    </script>
+    <!-- Login form START -->
+    <div class="card px-4 pt-2">
+        <form action="/signup" method="post" class="p-2" id="formsign">
+            <div class="form-group row">
+                <label for="user-name" class="col-12 col-form-label">Full Name</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="text" placeholder="Adminitrator" id="fullname" name="fullname" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Email</label>
+                <div class="col-12">
+                    <input class="form-control cusstom-focus" type="email" placeholder="admin@gmail.com" id="email" name=email required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-name" class="col-12 col-form-label">Phone</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="text" placeholder="0985336364" id="phone" name="phone" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Location</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="text" placeholder="Viet Nam" id="location" name=location required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-name" class="col-12 col-form-label">Username</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="text" placeholder="Admin" id="username" name="username" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Password</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="password" placeholder="**************" id="password" name=password required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="user-password" class="col-12 col-form-label">Confirm Password</label>
+                <div class="col-12">
+                    <input class="form-control custom-focus" type="password" placeholder="**********" id="confirm" name=confirm required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12 mt-3 mb-2 text-center">
+                    <button type="button" class="btn btn-primary btn-block" id="sign">Signup</button>
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-12 mt-3 mb-2 " style="text-align:center; color:black">
+                    <a href="#" class="text-success" id="cancel">Cancel</a>
+                </div>
+                <script>
+                    $("#sign").click(function() {
+                        var pass = $("#password").val();
+                        var confirm = $("#confirm").val();
+                        var user = {
+                            username: $("#username").val(),
+                            password: $("#password").val(),
+                            fullname: $("#fullname").val(),
+                            email: $("#email").val(),
+                            phone: $("#phone").val(),
+                            location: $("#location").val(),
+                            avatar: ""
+                        }
+                        if (pass == confirm) {
+                            $.ajax({
+                                url: "/signup",
+                                type: 'post',
+                                dataType: 'json',
+                                async: true,
+                                data: user
+                            });
+                            alert('Signup Successfull');
+                            window.location.href = "/"
+                        } else {
+                            alert('Signup Fails');
+                            window.location.href = "/signup"
+                        }
+
+
+                    })
+                    $("#cancel").click(function() {
+                        $("#signup").hide(250);
+                        $("#login").show(500);
+                        $("#forgetpass").hide(250);
+                    });
+
+                </script>
+
+
+
+            </div>
+        </form>
+    </div>
+    <!-- Login form END -->
+
+</div>
